@@ -1,0 +1,77 @@
+# app模块构建配置
+# 定义Android应用的编译参数和依赖
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    # 应用命名空间
+    namespace 'com.stretchly.breakreminder'
+    # 编译SDK版本
+    compileSdk 34
+
+    defaultConfig {
+        # 应用ID，唯一标识
+        applicationId "com.stretchly.breakreminder"
+        # 最低支持SDK版本（Android 7.0）
+        minSdk 24
+        # 目标SDK版本（Android 14）
+        targetSdk 34
+        # 版本号
+        versionCode 1
+        # 版本名称
+        versionName "1.0.0"
+    }
+
+    # 构建类型配置
+    buildTypes {
+        release {
+            # 发布版开启代码混淆
+            minifyEnabled true
+            # 混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            # 调试版不混淆
+            minifyEnabled false
+        }
+    }
+
+    # 编译选项
+    compileOptions {
+        # 使用Java 8特性
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    # Kotlin编译选项
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    # 启用ViewBinding，替代findViewById
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    # AndroidX核心库
+    implementation 'androidx.core:core-ktx:1.12.0'
+    # AppCompat兼容库
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    # Material Design组件库
+    implementation 'com.google.android.material:material:1.11.0'
+    # ConstraintLayout布局
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    # WorkManager，用于可靠的后台定时任务（保活核心）
+    implementation 'androidx.work:work-runtime-ktx:2.9.0'
+
+    # Lifecycle组件，用于观察Service生命周期
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+
+    # SharedPreferences安全加密（可选）
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+}

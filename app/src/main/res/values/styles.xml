@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 样式资源文件 -->
+<!-- 定义应用的主题和通用样式 -->
+<resources>
+    <!-- ======== 应用主主题 ======== -->
+    <!-- 基于MaterialComponents的浅色主题 -->
+    <style name="Theme.BreakReminder" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- 主色 -->
+        <item name="colorPrimary">@color/primary</item>
+        <!-- 深色主色 -->
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <!-- 强调色 -->
+        <item name="colorAccent">@color/accent</item>
+        <!-- 状态栏颜色 -->
+        <item name="android:statusBarColor">@color/primary_dark</item>
+    </style>
+
+    <!-- ======== 休息覆盖界面主题 ======== -->
+    <!-- 全屏沉浸式，无状态栏和导航栏 -->
+    <style name="Theme.BreakReminder.Overlay" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- 全屏 -->
+        <item name="android:windowFullscreen">true</item>
+        <!-- 无标题栏 -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- 透明状态栏 -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- 透明导航栏 -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

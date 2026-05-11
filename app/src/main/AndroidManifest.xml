@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android清单文件 -->
+<!-- 声明应用的所有组件、权限和配置 -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ==================== 权限声明 ==================== -->
+    <!-- 开机自启权限，用于设备重启后自动启动提醒服务 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 前台服务权限，保活核心 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- Android 14+前台服务类型声明 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <!-- 唤醒锁权限，用于定时唤醒设备执行提醒 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 振动权限，休息提醒时振动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 通知权限，Android 13+必须动态申请 -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- 精确闹钟权限，仅Android 12(API 31-32)使用 -->
+    <!-- Android 13+使用下方的USE_EXACT_ALARM替代 -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"
+        android:maxSdkVersion="32" />
+    <!-- 精确闹钟权限，Android 13+(API 33+)使用 -->
+    <!-- 本应用核心功能为定时提醒，符合闹钟/计时器类应用条件，自动授予 -->
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+
+    <application
+        android:name=".App"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BreakReminder"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        tools:targetApi="31">
+
+        <!-- ==================== Activity声明 ==================== -->
+        <!-- 主界面，应用入口 -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 休息提醒全屏界面 -->
+        <activity
+            android:name=".BreakOverlayActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:showOnLockScreen="true"
+            android:turnScreenOn="true"
+            android:theme="@style/Theme.BreakReminder.Overlay" />
+
+        <!-- 设置界面 -->
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/settings_title"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- ==================== Service声明 ==================== -->
+        <!-- 休息提醒前台服务（主服务，保活核心） -->
+        <service
+            android:name=".service.BreakReminderService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse" />
+
+        <!-- 保活守护服务（双进程守护，独立进程） -->
+        <service
+            android:name=".service.KeepAliveService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":keepalive" />
+
+        <!-- ==================== Receiver声明 ==================== -->
+        <!-- 开机自启广播接收器 -->
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:directBootAware="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 定时闹钟广播接收器 -->
+        <receiver
+            android:name=".receiver.AlarmReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+    </application>
+</manifest>

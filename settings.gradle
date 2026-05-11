@@ -1,0 +1,28 @@
+# 项目设置文件
+# 声明项目中包含的模块
+pluginManagement {
+    repositories {
+        # 优先使用阿里云Maven镜像，加速国内下载
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        # 优先使用阿里云Maven镜像，加速国内下载
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        google()
+        mavenCentral()
+    }
+}
+
+# 项目根目录名称
+rootProject.name = "BreakReminder"
+# 包含app模块
+include ':app'

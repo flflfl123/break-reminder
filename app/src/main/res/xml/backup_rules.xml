@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 数据提取规则配置 -->
+<!-- Android 12+的数据备份规则 -->
+<full-backup-content>
+    <!-- 排除SharedPreferences（包含用户配置，不需要备份） -->
+    <exclude domain="sharedpref" path="." />
+    <!-- 排除数据库 -->
+    <exclude domain="database" path="." />
+</full-backup-content>

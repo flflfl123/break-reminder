@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 字符串资源文件 -->
+<!-- 集中管理所有用户可见的文字，方便国际化和修改 -->
+<resources>
+    <!-- ======== 应用名称 ======== -->
+    <string name="app_name">休息提醒</string>
+    <string name="app_subtitle">定时提醒你休息，保护身心健康</string>
+
+    <!-- ======== 设置页面 ======== -->
+    <string name="settings_title">设置</string>
+
+    <!-- ======== 通知渠道名称 ======== -->
+    <string name="channel_foreground_name">服务状态</string>
+    <string name="channel_foreground_desc">显示休息提醒服务的运行状态</string>
+    <string name="channel_break_name">休息提醒</string>
+    <string name="channel_break_desc">提醒你该休息了</string>
+
+    <!-- ======== 通知文字 ======== -->
+    <string name="notification_mini_break_title">小休息时间到！</string>
+    <string name="notification_mini_break_text">该休息一下了，站起来活动活动</string>
+    <string name="notification_long_break_title">长休息时间到！</string>
+    <string name="notification_long_break_text">离开屏幕，好好休息一下吧</string>
+    <string name="notification_pre_break_title">即将休息</string>
+    <string name="notification_pre_break_text">%d秒后开始休息</string>
+</resources>

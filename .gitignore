@@ -1,0 +1,68 @@
+# Android项目Git忽略文件
+# 忽略不需要版本控制的文件和目录
+
+# ==================== Gradle构建相关 ====================
+# Gradle构建输出目录
+.gradle/
+build/
+# Gradle包装器（可选，团队统一时可提交）
+gradle/wrapper/
+# Gradle缓存
+.gradle/caches/
+
+# ==================== IDE相关 ====================
+# IntelliJ IDEA / Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+# 本地配置文件（含SDK路径等，绝对不能提交）
+local.properties
+# VS Code
+.vscode/
+
+# ==================== 操作系统生成文件 ====================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+# Linux
+*~
+
+# ==================== APK和签名相关 ====================
+# 编译生成的APK
+*.apk
+*.ap_
+*.aab
+# 签名密钥（绝对不能提交！泄露密钥等于应用被劫持）
+*.jks
+*.keystore
+# 签名配置文件
+keystore.properties
+
+# ==================== Kotlin相关 ====================
+# Kotlin编译缓存
+*.class
+*.kt.swp
+
+# ==================== 日志和临时文件 ====================
+# 日志文件
+*.log
+# 临时文件
+*.tmp
+*.bak
+*.swp
+
+# ==================== 其他 ====================
+# NDK编译输出
+obj/
+libs/
+# ProGuard映射文件（包含混淆前后对应关系，不可泄露）
+mapping.txt
+#Lint输出
+lint-report.html
+lint-results.xml

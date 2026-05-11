@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 颜色资源文件 -->
+<!-- 简约清新风格的配色方案 -->
+<resources>
+    <!-- ======== 主色调 ======== -->
+    <!-- 主色：清新绿色，参考Stretchly的小休息绿色 -->
+    <color name="primary">#4CAF50</color>
+    <!-- 主色深色变体 -->
+    <color name="primary_dark">#388E3C</color>
+    <!-- 主色浅色变体 -->
+    <color name="primary_light">#C8E6C9</color>
+
+    <!-- ======== 强调色 ======== -->
+    <!-- 强调色：蓝色，参考Stretchly的长休息蓝色 -->
+    <color name="accent">#2196F3</color>
+
+    <!-- ======== 背景色 ======== -->
+    <!-- 主界面背景色 -->
+    <color name="background_main">#FAFAFA</color>
+    <!-- 卡片背景色 -->
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- ======== 文字色 ======== -->
+    <!-- 主要文字色 -->
+    <color name="text_primary">#212121</color>
+    <!-- 次要文字色 -->
+    <color name="text_secondary">#757575</color>
+    <!-- 提示文字色 -->
+    <color name="text_hint">#9E9E9E</color>
+
+    <!-- ======== 状态色 ======== -->
+    <!-- 运行中状态色（绿色） -->
+    <color name="status_running">#4CAF50</color>
+    <!-- 已停止状态色（红色） -->
+    <color name="status_stopped">#F44336</color>
+
+    <!-- ======== 按钮色 ======== -->
+    <!-- 主按钮背景色 -->
+    <color name="button_primary">#4CAF50</color>
+
+    <!-- ======== 休息覆盖界面背景色 ======== -->
+    <!-- 小休息背景色（绿色） -->
+    <color name="mini_break_background">#4CAF50</color>
+    <!-- 长休息背景色（蓝色） -->
+    <color name="long_break_background">#2196F3</color>
+</resources>

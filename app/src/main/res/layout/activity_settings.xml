@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 设置界面布局 -->
+<!-- 参考Stretchly的Preferences界面设计 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ======== 小休息设置区域 ======== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小休息设置"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- 小休息间隔 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="间隔时间"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary" />
+
+            <Spinner
+                android:id="@+id/spinnerMiniBreakInterval"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:minWidth="120dp" />
+        </LinearLayout>
+
+        <!-- 小休息持续时间 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="持续时间"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary" />
+
+            <Spinner
+                android:id="@+id/spinnerMiniBreakDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:minWidth="120dp" />
+        </LinearLayout>
+
+        <!-- ======== 长休息设置区域 ======== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="长休息设置"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- 长休息间隔 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="间隔时间"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary" />
+
+            <Spinner
+                android:id="@+id/spinnerLongBreakInterval"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:minWidth="120dp" />
+        </LinearLayout>
+
+        <!-- 长休息持续时间 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="持续时间"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary" />
+
+            <Spinner
+                android:id="@+id/spinnerLongBreakDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:minWidth="120dp" />
+        </LinearLayout>
+
+        <!-- 每N次小休息后触发长休息 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="每N次小休息后"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary" />
+
+            <Spinner
+                android:id="@+id/spinnerLongBreakCount"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:minWidth="120dp" />
+        </LinearLayout>
+
+        <!-- ======== 行为设置区域 ======== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="行为设置"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- 严格模式 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="严格模式"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开启后不可跳过休息"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_hint" />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/switchStrictMode"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp" />
+        </LinearLayout>
+
+        <!-- 声音提醒 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="声音提醒"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary" />
+
+            <Switch
+                android:id="@+id/switchSound"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp" />
+        </LinearLayout>
+
+        <!-- 振动提醒 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="振动提醒"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary" />
+
+            <Switch
+                android:id="@+id/switchVibration"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp" />
+        </LinearLayout>
+
+        <!-- 自然休息检测 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自然休息检测"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="屏幕关闭时暂停计时"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_hint" />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/switchNaturalBreak"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp" />
+        </LinearLayout>
+
+        <!-- ======== 界面设置区域 ======== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="界面设置"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- 显示休息建议 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="显示休息建议"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary" />
+
+            <Switch
+                android:id="@+id/switchBreakIdeas"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp" />
+        </LinearLayout>
+
+        <!-- ======== 重置按钮 ======== -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnResetDefaults"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="恢复默认设置"
+            android:textSize="14sp"
+            android:textColor="@color/text_hint"
+            xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+    </LinearLayout>
+</ScrollView>

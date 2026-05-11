@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 休息提醒全屏覆盖界面布局 -->
+<!-- 参考Stretchly的全屏休息提醒设计 -->
+<!-- 小休息：绿色背景，长休息：蓝色背景 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mini_break_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <!-- 休息类型标题 -->
+        <TextView
+            android:id="@+id/tvBreakTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小休息时间"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
+
+        <!-- 倒计时显示 -->
+        <TextView
+            android:id="@+id/tvCountdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20秒"
+            android:textSize="72sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="32dp" />
+
+        <!-- 放松建议文字 -->
+        <TextView
+            android:id="@+id/tvBreakIdea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="站起来伸展一下身体"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:alpha="0.85"
+            android:layout_marginTop="32dp"
+            android:gravity="center" />
+
+        <!-- 跳过按钮（严格模式下隐藏） -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSkipBreak"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="48dp"
+            android:text="跳过休息"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cornerRadius="24dp" />
+
+    </LinearLayout>
+</FrameLayout>
