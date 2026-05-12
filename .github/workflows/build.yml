@@ -28,15 +28,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      # 第3步：生成Gradle Wrapper（如果项目中没有wrapper jar）
-      # gradle-wrapper.jar是二进制文件，不方便提交到Git
-      # 这里用Gradle命令自动生成完整的Wrapper
-      - name: 生成Gradle Wrapper
-        run: |
-          # 临时安装Gradle用于生成Wrapper
-          wget -q https://services.gradle.org/distributions/gradle-8.2-bin.zip -O /tmp/gradle.zip
-          unzip -q /tmp/gradle.zip -d /tmp/
-          /tmp/gradle-8.2/bin/gradle wrapper --gradle-version 8.2
+      # 第3步：设置Gradle
+      # 使用gradle-actions/setup-gradle自动配置Gradle环境
+      # 它会自动下载Gradle并生成Wrapper，无需手动处理
+      - name: 设置Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.2'
 
       # 第4步：缓存Gradle依赖，加速后续构建
       - name: 缓存Gradle依赖
@@ -48,15 +46,12 @@ jobs:
           key: gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-
 
-      # 第5步：授予Gradle Wrapper执行权限
-      - name: 授予执行权限
-        run: chmod +x gradlew
-
-      # 第6步：编译调试版APK
+      # 第5步：编译调试版APK
+      # 使用gradle直接构建（setup-gradle会配置好环境）
       - name: 构建调试版APK
-        run: ./gradlew assembleDebug
+        run: gradle assembleDebug
 
-      # 第7步：上传APK到Artifacts（可在Actions页面下载）
+      # 第6步：上传APK到Artifacts（可在Actions页面下载）
       - name: 上传APK
         uses: actions/upload-artifact@v4
         with:
