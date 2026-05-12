@@ -1,8 +1,8 @@
-# 顶层构建配置文件
-# 所有子项目/模块共用的构建配置
+// 顶层构建配置文件
+// 所有子项目/模块共用的构建配置
 plugins {
-    # Android应用插件
+    // Android应用插件
     id 'com.android.application' version '8.2.0' apply false
-    # Kotlin Android插件
+    // Kotlin Android插件
     id 'org.jetbrains.kotlin.android' version '1.9.20' apply false
 }
