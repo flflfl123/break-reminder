@@ -22,4 +22,7 @@
     <string name="notification_long_break_text">离开屏幕，好好休息一下吧</string>
     <string name="notification_pre_break_title">即将休息</string>
     <string name="notification_pre_break_text">%d秒后开始休息</string>
+
+    <!-- ======== 主界面文字 ======== -->
+    <string name="start_service_hint">点击\"开始提醒\"启动服务</string>
 </resources>
