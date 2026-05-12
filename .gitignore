@@ -5,10 +5,10 @@
 # Gradle构建输出目录
 .gradle/
 build/
-# Gradle包装器（可选，团队统一时可提交）
-gradle/wrapper/
 # Gradle缓存
 .gradle/caches/
+# 注意：gradle/wrapper/目录需要提交到Git
+# 因为GitHub Actions云端构建需要gradle-wrapper.properties
 
 # ==================== IDE相关 ====================
 # IntelliJ IDEA / Android Studio
