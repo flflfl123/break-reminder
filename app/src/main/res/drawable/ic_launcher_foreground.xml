@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 应用图标前景层 -->
+<!-- 白色时钟图标，代表定时提醒 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:translateX="27"
+        android:translateY="27">
+        <!-- 时钟外圈 -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M54,10C30.3,10 11,29.3 11,53s19.3,43 43,43 43,-19.3 43,-43S77.7,10 54,10zM54,88c-19.3,0 -35,-15.7 -35,-35s15.7,-35 35,-35 35,15.7 35,35 -15.7,35 -35,35z" />
+        <!-- 时钟指针 -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M56,50V30c0,-2.2 -1.8,-4 -4,-4s-4,1.8 -4,4v22c0,1.1 0.4,2.1 1.2,2.8l12,12c0.8,0.8 1.8,1.2 2.8,1.2s2.1,-0.4 2.8,-1.2c1.6,-1.6 1.6,-4.1 0,-5.7L56,50z" />
+    </group>
+</vector>

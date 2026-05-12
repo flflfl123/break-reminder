@@ -1,12 +1,12 @@
 package com.stretchly.breakreminder
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.stretchly.breakreminder.service.BreakReminderService
-import com.stretchly.breakreminder.util.BreakScheduler
 import com.stretchly.breakreminder.util.NotificationHelper
 import com.stretchly.breakreminder.util.PreferencesManager
 import java.util.Locale
