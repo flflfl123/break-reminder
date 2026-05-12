@@ -66,7 +66,7 @@
                     android:id="@+id/tvNextBreakInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="点击\"开始提醒\"启动服务"
+                    android:text="点击&quot;开始提醒&quot;启动服务"
                     android:textSize="14sp"
                     android:textColor="@color/text_secondary"
                     android:layout_marginTop="12dp"
